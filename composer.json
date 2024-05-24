@@ -7,14 +7,24 @@
         "php": ">=8.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "doctrine/dbal": "^3",
+        "doctrine/doctrine-bundle": "^2.12",
+        "doctrine/doctrine-migrations-bundle": "^3.3",
+        "doctrine/orm": "^3.2",
+        "hautelook/alice-bundle": "^2.14",
         "symfony/console": "7.0.*",
         "symfony/dotenv": "7.0.*",
         "symfony/flex": "^2",
         "symfony/framework-bundle": "7.0.*",
+        "symfony/http-client": "7.0.*",
+        "symfony/mailer": "7.0.*",
         "symfony/runtime": "7.0.*",
-        "symfony/yaml": "7.0.*"
+        "symfony/twig-bundle": "7.0.*",
+        "symfony/yaml": "7.0.*",
+        "theofidry/alice-data-fixtures": "*"
     },
     "require-dev": {
+        "symfony/maker-bundle": "^1.59"
     },
     "config": {
         "allow-plugins": {
@@ -26,7 +36,8 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "App\\": "src/App",
+            "Gamification\\": "src/Gamification"
         }
     },
     "autoload-dev": {
@@ -47,7 +58,9 @@
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+            "assets:install %PUBLIC_DIR%": "symfony-cmd",
+            "doctrine:schema:update --force --complete": "symfony-cmd",
+            "hautelook:fixtures:load -vvv -n": "symfony-cmd"
         },
         "post-install-cmd": [
             "@auto-scripts"
