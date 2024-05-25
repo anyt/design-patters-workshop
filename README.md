@@ -6,7 +6,7 @@
 - [Symfony Server](https://symfony.com/download)
 
 ## Установка
-- Склонуйте репозиторій
+- Склонуйте репозиторій `git clone https://github.com/anyt/design-patters-workshop.git`
 - Запустіть сервіси за допомогою `docker-compose up -d`
 - Встановіть застосунок за допомогою `composer install`
 - Запустіть сервер за допомогою `symfony serve -d`
